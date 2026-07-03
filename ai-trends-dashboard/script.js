@@ -115,15 +115,24 @@ function renderChecklist() {
 }
 
 function renderSignal() {
-  const s = D.viralSignal;
+  const s = D.vendorTips;
   document.getElementById("signal").innerHTML = `
-    <p class="quote">${s.quote}</p>
-    <div class="attrib">${s.attrib}</div>
-    <p style="font-size:13px; color:var(--ink-muted); margin-top:16px;">${s.tricksIntro}</p>
-    <ul class="tricks">
-      ${s.tricks.map((t) => `<li><code>${t.code}</code><span>${t.desc}</span></li>`).join("")}
+    <p style="font-size:12.5px; color:var(--ink-muted); margin:0 0 14px;">${s.windowLabel}</p>
+    <ul class="vendor-tips">
+      ${s.items
+        .map(
+          (t) => `
+        <li>
+          <div class="vendor-tips-meta">
+            <span class="vendor-name">${t.vendor}</span>
+            <span class="vendor-when">${t.when}</span>
+          </div>
+          <p>${t.tip}</p>
+        </li>`
+        )
+        .join("")}
     </ul>
-    <div class="caveat">${s.caveat}</div>
+    <div class="caveat">${s.note}</div>
   `;
 }
 

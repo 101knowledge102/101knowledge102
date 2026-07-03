@@ -306,32 +306,21 @@ details.table-toggle table { margin-top: 10px; }
 .checklist strong { display: block; color: var(--ink); }
 .checklist span.desc { color: var(--ink-muted); }
 
-.signal-card .quote {
-  font-size: 13.5px;
-  color: var(--ink);
-  margin: 0 0 14px;
-}
-.signal-card .attrib {
+.vendor-tips { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.vendor-tips li { padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.vendor-tips li:last-child { padding-bottom: 0; border-bottom: none; }
+.vendor-tips li p { margin: 4px 0 0; font-size: 13px; color: var(--ink); }
+.vendor-tips-meta { display: flex; justify-content: space-between; gap: 10px; }
+.vendor-tips .vendor-name {
   font-family: var(--font-mono);
   font-size: 11.5px;
-  color: var(--ink-muted);
-}
-.tricks { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.tricks li {
-  font-size: 13px;
-  display: grid;
-  grid-template-columns: 84px 1fr;
-  gap: 10px;
-}
-.tricks code {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  background: var(--surface-sunken);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 1px 6px;
+  font-weight: 600;
   color: var(--accent-ink);
-  height: fit-content;
+}
+.vendor-tips .vendor-when {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
 }
 .caveat {
   margin-top: 16px;

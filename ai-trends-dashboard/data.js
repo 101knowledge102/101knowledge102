@@ -1,11 +1,13 @@
 // Seed data for the dashboard, curated from web research on 2026-07-03.
-// To go live: replace the static objects below with fetch() calls to the
-// GitHub REST API, the X API v2, and/or a news/search API. Each render*()
-// function in script.js only needs an array/object shaped like these.
+// The "vendor tips" section is sourced entirely from vendors' own public
+// changelogs/blogs (Anthropic, GitHub, etc.) — zero API cost, no X/Twitter
+// dependency. To go live: replace the static objects below with fetch()
+// calls to those changelog pages/RSS feeds. Each render*() function in
+// script.js only needs an array/object shaped like these.
 
 const DASHBOARD_DATA = {
   updated: "2026-07-03",
-  mode: "curated snapshot", // swap to "live" once real API calls are wired in
+  mode: "official sources only · zero API cost", // swap to "live" once fetches are wired in
 
   stats: [
     {
@@ -77,21 +79,41 @@ const DASHBOARD_DATA = {
     },
   ],
 
-  viralSignal: {
-    quote:
-      "Claude has been out for two years, and the people using it daily still only touch about 10% of it. The problem isn't that features are hidden — it's that the way most people prompt it throws the rest away.",
-    attrib: "— paraphrased from a post by Anatoli Kopadze, ~19M views on X",
-    tricksIntro:
-      "A follow-up thread from @ai.with.andrew (23K followers) catalogued five prompt habits people claim change Claude's output without changing the underlying ask:",
-    tricks: [
-      { code: "/ghost", desc: "strip the “AI voice” out of the reply" },
-      { code: "/artifacts", desc: "stand up a runnable mini-app inline, on the spot" },
-      { code: "OODA", desc: "route the answer through the military Observe-Orient-Decide-Act loop" },
-      { code: "L99", desc: "push the response to an expert-level register" },
-      { code: "/god mode", desc: "unlock the most exhaustive, no-shortcuts style" },
+  vendorTips: {
+    windowLabel: "Straight from the changelogs — checked periodically, a few days' lag is fine",
+    items: [
+      {
+        vendor: "Anthropic · Claude Code",
+        when: "Jul 2026",
+        tip: "Claude Sonnet 5 is now the default model, with a native 1M-token context window and promotional $2/$10-per-Mtok pricing through Aug 31 — worth switching a large-repo workflow over before the window closes.",
+      },
+      {
+        vendor: "Anthropic · Claude Code",
+        when: "Jul 2026",
+        tip: "Background agents launched from `claude agents` now commit, push, and open a draft PR on their own when a worktree task finishes, instead of stopping to ask — useful for fire-and-forget refactors.",
+      },
+      {
+        vendor: "Anthropic · Claude Code",
+        when: "Jul 2026",
+        tip: "A streaming idle watchdog is on by default: a stalled response auto-aborts and retries after 5 minutes of silence. Set CLAUDE_ENABLE_STREAM_WATCHDOG=0 if a long-silent workload needs it off.",
+      },
+      {
+        vendor: "GitHub · Copilot",
+        when: "2026",
+        tip: "Claude Sonnet 5 and Opus 4.8 Fast are now selectable inside Copilot's model picker (Pro, Pro+, Business, Enterprise) — worth a look for agentic tasks, not just autocomplete.",
+      },
+      {
+        vendor: "GitHub · Copilot",
+        when: "Feb 2026",
+        tip: "Copilot CLI reached general availability — a terminal-native way to generate shell commands, explain errors, and scaffold scripts without leaving the shell.",
+      },
+      {
+        vendor: "GitHub · Copilot",
+        when: "2026",
+        tip: "Agent mode in JetBrains IDEs now supports Skills — install community skills or write your own to tailor Copilot to a specific workflow.",
+      },
     ],
-    caveat:
-      "These are community-reported prompt conventions circulating on X, not documented Claude Code features or Anthropic-supported commands. Treat them as folklore worth testing, not guaranteed behavior — the only slash commands and workflows verified above (/init, /loop, CLAUDE.md, skills) come from Claude Code's own docs.",
+    note: "Sourced entirely from vendors' own public changelogs and release notes (Anthropic, GitHub) — no X/Twitter API, no billing. Checked in batches rather than streamed live, so items can lag the actual release by a few days; that's an accepted trade-off for keeping this section free.",
   },
 
   comparison: [
@@ -116,6 +138,9 @@ const DASHBOARD_DATA = {
   ],
 
   sources: [
+    { title: "Claude Code changelog — Claude Code Docs", url: "https://code.claude.com/docs/en/changelog" },
+    { title: "Claude Platform release notes — Anthropic Docs", url: "https://docs.anthropic.com/en/release-notes/overview" },
+    { title: "GitHub Changelog, 06/2026", url: "https://github.blog/changelog/month/06-2026/" },
     { title: "Best practices for Claude Code — Claude Code Docs", url: "https://code.claude.com/docs/en/best-practices" },
     { title: "Which AI Coding Tools Do Developers Actually Use at Work? — JetBrains Blog", url: "https://blog.jetbrains.com/research/2026/04/which-ai-coding-tools-do-developers-actually-use-at-work/" },
     { title: "Claude Code vs Codex vs OpenCode — Medium", url: "https://medium.com/@unicodeveloper/claude-code-vs-codex-vs-opencode-which-ai-coding-agent-is-actually-the-best-in-2026-baa9f6fd5374" },
