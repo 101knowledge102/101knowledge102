@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Field Notes — AI Coding Trends</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <div>
+        <p class="kicker">Field notes · AI coding</p>
+        <h1>The Claude Code &amp; AI coding beat</h1>
+      </div>
+      <div class="dateline">
+        <div>Updated <span id="dateline-date"></span></div>
+        <span class="mode" id="dateline-mode"></span>
+      </div>
+    </header>
+
+    <section aria-labelledby="stats-h">
+      <h2 id="stats-h">Market snapshot</h2>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section aria-labelledby="charts-h">
+      <h2 id="charts-h">Adoption
+        <span class="sub">Claude Code's growth curve, and where the three leading tools stand today</span>
+      </h2>
+      <div class="charts">
+        <div class="card line-chart">
+          <h2 style="font-size:14px; margin-bottom:12px;">Claude Code, workplace adoption</h2>
+          <div id="line-chart"></div>
+        </div>
+        <div class="card">
+          <h2 style="font-size:14px; margin-bottom:12px;">Who developers use at work (Jan 2026)</h2>
+          <div class="bars" id="bars"></div>
+          <div id="bars-table"></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="notes-h">
+      <h2 id="notes-h">Field notes</h2>
+      <div class="notes">
+        <div class="card">
+          <h2 style="font-size:14px;">Best practices worth keeping</h2>
+          <ul class="checklist" id="checklist"></ul>
+        </div>
+        <div class="card signal-card">
+          <h2 style="font-size:14px;">This week's signal on X</h2>
+          <div id="signal"></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="compare-h">
+      <h2 id="compare-h">Head to head</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Tool</th><th>Workplace adoption</th><th>What it is</th></tr>
+          </thead>
+          <tbody id="comparison-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <h3>Sources</h3>
+      <ol id="sources"></ol>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
