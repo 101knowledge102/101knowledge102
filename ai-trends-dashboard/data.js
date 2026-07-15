@@ -6,7 +6,7 @@
 // script.js only needs an array/object shaped like these.
 
 const DASHBOARD_DATA = {
-  updated: "2026-07-03",
+  updated: "2026-07-15",
   mode: "official sources only · zero API cost", // swap to "live" once fetches are wired in
 
   stats: [
@@ -83,37 +83,37 @@ const DASHBOARD_DATA = {
     windowLabel: "Straight from the changelogs — checked periodically, a few days' lag is fine",
     items: [
       {
-        vendor: "Anthropic · Claude Code",
-        when: "Jul 2026",
-        tip: "Claude Sonnet 5 is now the default model, with a native 1M-token context window and promotional $2/$10-per-Mtok pricing through Aug 31 — worth switching a large-repo workflow over before the window closes.",
-      },
-      {
-        vendor: "Anthropic · Claude Code",
-        when: "Jul 2026",
-        tip: "Background agents launched from `claude agents` now commit, push, and open a draft PR on their own when a worktree task finishes, instead of stopping to ask — useful for fire-and-forget refactors.",
-      },
-      {
-        vendor: "Anthropic · Claude Code",
-        when: "Jul 2026",
-        tip: "A streaming idle watchdog is on by default: a stalled response auto-aborts and retries after 5 minutes of silence. Set CLAUDE_ENABLE_STREAM_WATCHDOG=0 if a long-silent workload needs it off.",
+        vendor: "GitHub · Copilot",
+        when: "Jul 20, 2026",
+        tip: "GitHub Code Quality becomes a paid product at $10 per active committer/month. Check your org's active-committer count now (visible under Code Quality settings) to estimate the bill before it flips on.",
       },
       {
         vendor: "GitHub · Copilot",
-        when: "2026",
-        tip: "Claude Sonnet 5 and Opus 4.8 Fast are now selectable inside Copilot's model picker (Pro, Pro+, Business, Enterprise) — worth a look for agentic tasks, not just autocomplete.",
+        when: "Jul 2026",
+        tip: "GPT-5.6 is rolling into Copilot's model picker in three variants — Sol, Terra, Luna — so you can match the model to the job: deep reasoning over a large codebase, everyday agentic coding, or fast/cheap assistance.",
       },
       {
         vendor: "GitHub · Copilot",
-        when: "Feb 2026",
-        tip: "Copilot CLI reached general availability — a terminal-native way to generate shell commands, explain errors, and scaffold scripts without leaving the shell.",
+        when: "Jul 1, 2026",
+        tip: "Kimi K2.7 Code joined the model picker as the first open-weight model offered as a selectable option, alongside VS Code browser tools reaching general availability and CLI Auto now routing requests by task.",
       },
       {
-        vendor: "GitHub · Copilot",
-        when: "2026",
-        tip: "Agent mode in JetBrains IDEs now supports Skills — install community skills or write your own to tailor Copilot to a specific workflow.",
+        vendor: "Anthropic · Claude",
+        when: "Jul 1, 2026",
+        tip: "Claude Fable 5 redeployed globally across Claude.ai, Claude Code, and Claude Cowork — included in up to 50% of weekly usage limits through Jul 7, now drawing from usage credits after that.",
+      },
+      {
+        vendor: "Anthropic · Claude Code",
+        when: "Jul 2026",
+        tip: "Claude Sonnet 5 is now the default model, with a native 1M-token context window and promotional $2/$10-per-Mtok pricing through Aug 31 (then $3/$15) — worth switching a large-repo workflow over before the window closes.",
+      },
+      {
+        vendor: "OpenAI",
+        when: "Jul 2026",
+        tip: "GPT-5.6 is becoming the new preferred model across Microsoft 365 Copilot — Word, Excel, PowerPoint, Chat, and Cowork.",
       },
     ],
-    note: "Sourced entirely from vendors' own public changelogs and release notes (Anthropic, GitHub) — no X/Twitter API, no billing. Checked in batches rather than streamed live, so items can lag the actual release by a few days; that's an accepted trade-off for keeping this section free.",
+    note: "Sourced entirely from vendors' own public changelogs and release notes (Anthropic, GitHub, OpenAI) — no X/Twitter API, no billing. Checked in batches rather than streamed live, so items can lag the actual release by a few days; that's an accepted trade-off for keeping this section free.",
   },
 
   comparison: [
@@ -140,6 +140,10 @@ const DASHBOARD_DATA = {
   sources: [
     { title: "Claude Code changelog — Claude Code Docs", url: "https://code.claude.com/docs/en/changelog" },
     { title: "Claude Platform release notes — Anthropic Docs", url: "https://docs.anthropic.com/en/release-notes/overview" },
+    { title: "Newsroom — Anthropic", url: "https://www.anthropic.com/news" },
+    { title: "Introducing Claude Sonnet 5 — Anthropic", url: "https://www.anthropic.com/news/claude-sonnet-5" },
+    { title: "Redeploying Claude Fable 5 — Anthropic", url: "https://www.anthropic.com/news/redeploying-fable-5" },
+    { title: "GitHub Copilot July 2026 update: Kimi K2.7, Browser, Credit Caps", url: "https://tokenmix.ai/blog/github-copilot-july-2026-update-kimi-browser-ai-credits" },
     { title: "GitHub Changelog, 06/2026", url: "https://github.blog/changelog/month/06-2026/" },
     { title: "Best practices for Claude Code — Claude Code Docs", url: "https://code.claude.com/docs/en/best-practices" },
     { title: "Which AI Coding Tools Do Developers Actually Use at Work? — JetBrains Blog", url: "https://blog.jetbrains.com/research/2026/04/which-ai-coding-tools-do-developers-actually-use-at-work/" },
