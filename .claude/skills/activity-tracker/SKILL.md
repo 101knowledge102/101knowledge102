@@ -58,7 +58,11 @@ energy 4" or "刚才午睡了半小时，精神好多了"):
 
 1. Parse time range, activity, category, energy, notes.
 2. Append the row to today's file (create the file from the format above if needed).
-3. Reply with one short confirmation line showing exactly what was logged —
+3. Commit and push immediately (`git add tracker/ && git commit -m "log: <date>" && git push`).
+   This is not optional: in remote sessions the working environment is
+   discarded when the session ends, so an unpushed entry is a lost entry.
+   Batch multiple entries from the same turn into one commit.
+4. Reply with one short confirmation line showing exactly what was logged —
    no lecture, no unsolicited advice.
 
 If the user dumps a whole day at once ("this morning I did X, then Y, after
@@ -98,3 +102,5 @@ time of day, and the most energizing/draining activities.
   actual numbers from the script.
 - This is the user's personal data. Never rewrite or delete past entries
   except when the user explicitly corrects one.
+- Any change to `tracker/` (log entries, reflections, config edits) must be
+  committed and pushed in the same turn it is made.
